@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 export default class StatBlocks extends React.Component {
   render() {
-    let width = (100/this.props.blocks.count() - 5) + "%"
+    let width = (100/this.props.blocks.count() - 2.5) + "%"
     return (
       <div className={css(styles.flexJustifiedBetweenCenteredRow)}>
         {this.props.blocks.map((block, key) =>

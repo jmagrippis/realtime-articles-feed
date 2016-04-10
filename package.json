@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'test/**/*.@(js|jsx)'",
     "test:watch": "npm run test -- --watch --watch-extensions jsx",
-    "dev-serve": "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "react",

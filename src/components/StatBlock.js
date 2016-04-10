@@ -11,8 +11,19 @@ const styles = StyleSheet.create({
   flexColumn: {
     display: "flex",
     flexDirection: "column"
+  },
+  statCount: {
+    fontSize: "2em",
+    fontWeight: "700"
+  },
+  statTitle: {
+    fontSize: "1.1em"
   }
 })
+
+const materialIconStyle = {
+  fontSize: "2em"
+}
 
 export default class StatBlock extends React.Component {
   render() {
@@ -23,10 +34,10 @@ export default class StatBlock extends React.Component {
 
     return (
       <div style={style}>
-        {this.props.icon ? <div>!</div> : ""}
+        {this.props.icon ? <i className="material-icons" style={materialIconStyle}>{this.props.icon}</i> : ""}
         <div className={css(styles.flexColumn)}>
-          <div>{this.props.value}</div>
-          <div>{this.props.title}</div>
+          <div className={css(styles.statCount)}>{this.props.value.toLocaleString()}</div>
+          <div className={css(styles.statTitle)}>{this.props.title}</div>
         </div>
       </div>
     )

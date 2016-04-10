@@ -4,9 +4,9 @@ import {List, Map} from "immutable"
 import "./../node_modules/normalize.css/normalize.css"
 
 import TrendingApp from "./components/TrendingApp"
+import { placeholders } from "./config"
 
-
-const coverImage = "https://placeholdit.imgix.net/~text?txtsize=33&txt=[cover%20image]&w=480&h=480"
+const coverImage = placeholders.coverThumbImage
 
 const articles = List.of(
   Map({ id: 1, title: "12 famous directors that never got final cut", author: { name: "Timmy Tester" }, published_at: "2016-04-08T08:33:32.000-07:00", cover_image_url: coverImage, tower_data: { reads: 10000, shares: 1000, comments: 100 }, picture: "avatar.png", round: 1 }),
@@ -16,5 +16,5 @@ const articles = List.of(
 
 ReactDOM.render(
   <TrendingApp articles={articles} />,
-  document.getElementById("articlesApp")
+  document.getElementById("trendingApp")
 )

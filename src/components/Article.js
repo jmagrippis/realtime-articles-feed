@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     marginRight: "1.5em"
   },
   largeHeader: {
-    fontSize: "2.25em"
+    fontSize: "2.25em",
+    margin: 0
   },
   byline: {
     fontSize: "1.2em",
@@ -27,9 +28,9 @@ const styles = StyleSheet.create({
 
 function deriveBlocks(data) {
   return List.of(
-    Map({ value: data.reads, title: "Total Reads", color: "green", icon: true }),
-    Map({ value: data.shares, title: "Engagements", color: "red", icon: false }),
-    Map({ value: data.comments, title: "Comments", color: "yellow", icon: false })
+    Map({ value: data.reads, title: "Total Reads", color: "#9FC8A7", icon: "flash_on" }),
+    Map({ value: data.shares, title: "Engagements", color: "#F08F76", icon: false }),
+    Map({ value: data.comments, title: "Comments", color: "#F7D000", icon: false })
   )
 }
 
