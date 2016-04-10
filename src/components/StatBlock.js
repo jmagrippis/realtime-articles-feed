@@ -43,7 +43,7 @@ export default class StatBlock extends React.Component {
         {this.props.icon ? <i className="material-icons" style={materialIconStyle}>{this.props.icon}</i> : ""}
         <div className={css(styles.flexColumn)}>
           <div className={css(styles.statCount)}>{this.props.value.toLocaleString()}</div>
-          <div className={css(styles.statTitle)}>{this.props.title}</div>
+          {this.props.title ? <div className={css(styles.statTitle)}>{this.props.title}</div> : ""}
         </div>
       </div>
     )
