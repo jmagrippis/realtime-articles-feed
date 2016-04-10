@@ -1,4 +1,5 @@
 import React from "react"
+import PureRenderMixin from "react-addons-pure-render-mixin"
 import { StyleSheet, css } from "aphrodite"
 
 import StatBlock from "./StatBlock"
@@ -12,6 +13,11 @@ const styles = StyleSheet.create({
 })
 
 export default class StatBlocks extends React.Component {
+  constructor(props) {
+    super(props)
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+  }
+  
   render() {
     let width = (100/this.props.blocks.count() - 2.5) + "%"
     return (

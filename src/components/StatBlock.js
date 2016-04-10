@@ -1,4 +1,5 @@
 import React from "react"
+import PureRenderMixin from "react-addons-pure-render-mixin"
 import { StyleSheet, css } from "aphrodite"
 
 const blockStyle = {
@@ -26,6 +27,11 @@ const materialIconStyle = {
 }
 
 export default class StatBlock extends React.Component {
+  constructor(props) {
+    super(props)
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+  }
+
   render() {
     let style = Object.assign(blockStyle, {color: this.props.color})
     if (this.props.width) {
